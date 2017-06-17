@@ -59,9 +59,3 @@ class LRUCache(object):
         if len(self._dict) < self._len:
             self._dict.popitem(last=False)
         self._dict[key] = value
-
-
-# Your LRUCache object will be instantiated and called as such:
-# obj = LRUCache(capacity)
-# param_1 = obj.get(key)
-# obj.put(key,value)
