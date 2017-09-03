@@ -30,6 +30,8 @@ class Solution(object):
         """
         :type s: str
         :rtype: int
+        (d>'0')*w: 保证了当前的数字可以独立成为一个字母
+        (9<int(p+d)<27)*v: 保证了前一个和当前可以组合被译码为一个字母
         """
         v, w, p = 0, int(s > ''), ''
         for d in s:
