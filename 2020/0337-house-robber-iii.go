@@ -6,6 +6,7 @@
  *     Right *TreeNode
  * }
  */
+ 
  // 递归
 func rob(root *TreeNode) int {
     ret := helper(root)
@@ -33,4 +34,3 @@ func max(a []int) int {
     }
     return a[1]
 }
-
