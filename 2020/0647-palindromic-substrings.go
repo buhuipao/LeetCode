@@ -1,12 +1,8 @@
-// 朴素做法：中心扩展法
+// 中心扩展法
 func countSubstrings(s string) int {
+    var ans, left, right int
     n := len(s)
-    if n == 0 {
-        return 0
-    }
-    var ans int
-    var left, right int
-    for i := 0; i < n; i++ {
+    for i := range s {
         left, right = i, i
         for left >= 0 && right < n && s[left] == s[right] {
             ans++
@@ -20,9 +16,5 @@ func countSubstrings(s string) int {
             right++
         }
     }
-
     return ans
 }
-
-// 高效做法：马拉车
-
