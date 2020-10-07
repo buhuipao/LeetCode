@@ -3,6 +3,7 @@
 // 2）nums[right+1:n]都大于1；
 // 3）nums[left:i]都等于1；
 // 4）nums[i:right]待定;
+
 func sortColors(nums []int)  {
     left, i, right := 0, 0, len(nums) - 1
     for i <= right {
