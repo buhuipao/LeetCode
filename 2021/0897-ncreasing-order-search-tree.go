@@ -16,6 +16,7 @@ func increasingBST(root *TreeNode) *TreeNode {
             node = node.Left
         }
         node = stack[len(stack)-1]
+        node.Left = nil
         stack = stack[:len(stack)-1]
         if newRoot == nil {
             newRoot = node
