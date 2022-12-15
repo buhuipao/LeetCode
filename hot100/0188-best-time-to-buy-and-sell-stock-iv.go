@@ -12,6 +12,7 @@ func maxProfit(k int, prices []int) int {
     }
 
     for _, p := range prices {
+        // 批量根据前一天计算今天的收益状态
         for i := 1; i <= k; i++ {
             b[i] = max(b[i], s[i-1]-p)
             s[i] = max(s[i], b[i]+p)

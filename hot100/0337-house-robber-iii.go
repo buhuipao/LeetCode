@@ -7,21 +7,20 @@
  * }
  */
 func rob(root *TreeNode) int {
-    rob, notRob := robRoot(root)
-    return max(rob, notRob)
+    robRoot, notRobRoot := robNode(root)
+
+    return max(robRoot, notRobRoot)
 }
 
-func robRoot(root *TreeNode) (robCur int, notRobCur int) {
+func robNode(root *TreeNode) (int, int) {
     if root == nil {
-        return
+        return 0, 0
     }
 
-    robLeft, notRobLeft := robRoot(root.Left)
-    robRight, notRobRight := robRoot(root.Right)
-    robCur = root.Val + notRobLeft + notRobRight
-    notRobCur = max(robLeft, notRobLeft) + max(robRight, notRobRight)
+    robLeft, notRobLeft := robNode(root.Left)
+    robRight, notRobRight := robNode(root.Right)
 
-    return robCur, notRobCur
+    return notRobLeft+notRobRight+root.Val, max(robLeft, notRobLeft)+max(robRight, notRobRight)
 }
 
 func max(a, b int) int {
