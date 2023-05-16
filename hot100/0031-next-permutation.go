@@ -1,4 +1,5 @@
 // 两遍扫描，找到数列中倒数第一个升序和降序，然后替换降序中
+// [1, 2, 3, 5, 4, 2] => [1, 2, 4,  2, 3, 5] 
 func nextPermutation(nums []int)  {
     n := len(nums)
     if n < 2 {
